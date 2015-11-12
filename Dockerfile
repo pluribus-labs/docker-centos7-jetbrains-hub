@@ -12,9 +12,8 @@ ENV HUB_PACKAGE hub-ring-bundle-1.0.648.zip
 ENV HUB_DOWNLOAD http://download-cf.jetbrains.com/hub/1.0
 ENV HUB_PORT 8110
 
-RUN mkdir /opt
 RUN wget -nv $HUB_DOWNLOAD/$HUB_PACKAGE && \
-             unzip $HUB_PACKAGE /opt
+             unzip $HUB_PACKAGE -d /opt
 EXPOSE $HUB_PORT
 
 # Looks like ENV variables don't get subbed in the CMD command hence the hardcode of values
