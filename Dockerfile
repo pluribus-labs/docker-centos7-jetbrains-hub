@@ -16,6 +16,6 @@ RUN wget -nv $HUB_DOWNLOAD/$HUB_PACKAGE && \
              unzip $HUB_PACKAGE -C /opt
 EXPOSE $HUB_PORT
 
-# Looks like ENV variables don't get subbed in the CMD command hence the hardcode
+# Looks like ENV variables don't get subbed in the CMD command hence the hardcode of values
 # from https://confluence.jetbrains.com/display/YTD6/YouTrack+JAR+as+a+Service+on+Linux
 CMD ["/opt/hub-ring-bundle-1.0.648/bin/hub.sh", "run"]
