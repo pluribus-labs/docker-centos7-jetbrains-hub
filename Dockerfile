@@ -1,6 +1,6 @@
 # docker run -dt -p 8112:8112 pluribuslabs/centos7-jetbrains-hub
 
-FROM pluribuslabs/centos7-oracle-jdk-7
+FROM pluribuslabs/centos7-oracle-jdks-7-8
 
 MAINTAINER Pluribus Labs Docker Dev <docker-dev@pluribuslabs.com>
 
