@@ -1,4 +1,4 @@
-# docker run -dt -p 8112:8112 pluribuslabs/centos7-youtrack-server
+# docker run -dt -p 8112:8112 pluribuslabs/centos7-jetbrains-hub
 
 FROM pluribuslabs/centos7-oracle-jdk-7
 
