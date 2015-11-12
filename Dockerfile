@@ -1,4 +1,4 @@
-# docker run -dt -p 8112:8112 pluribuslabs/centos7-jetbrains-hub
+# docker run -dt -p 8110:8110 pluribuslabs/centos7-jetbrains-hub
 
 FROM pluribuslabs/centos7-oracle-jdks-7-8
 
