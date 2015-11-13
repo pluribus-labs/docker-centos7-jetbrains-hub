@@ -13,9 +13,9 @@ ENV HUB_DOWNLOAD http://download-cf.jetbrains.com/hub/1.0
 ENV HUB_PORT 8110
 
 RUN wget -nv $HUB_DOWNLOAD/$HUB_PACKAGE
-RUN unzip $HUB_PACKAGE -d /opt
+RUN unzip $HUB_PACKAGE -d /opt/hub-ring-bundle-1.0.648
 EXPOSE $HUB_PORT
 
 # Looks like ENV variables don't get subbed in the CMD command hence the hardcode of values
-# from https://confluence.jetbrains.com/display/YTD6/YouTrack+JAR+as+a+Service+on+Linux 
-CMD ["/opt/hub-ring-bundle-1.0.648/bin/hub.sh", "run"]
+# from https://confluence.jetbrains.com/display/YTD6/YouTrack+JAR+as+a+Service+on+Linux
+CMD ["/opt/hub-ring-bundle-1.0.648/bin/hub.sh", "run", "--listen-port 8110"]
