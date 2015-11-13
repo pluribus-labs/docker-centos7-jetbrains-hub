@@ -12,8 +12,8 @@ ENV HUB_PACKAGE hub-ring-bundle-1.0.648.zip
 ENV HUB_DOWNLOAD http://download-cf.jetbrains.com/hub/1.0
 
 RUN wget -nv $HUB_DOWNLOAD/$HUB_PACKAGE
-RUN unzip $HUB_PACKAGE -d /opt/hub-ring-bundle-1.0.648
-RUN rm $HUB_PACKAGE
+RUN unzip $HUB_PACKAGE -d /opt/hub-ring-bundle-1.0.648 &&\
+   rm $HUB_PACKAGE
 EXPOSE 8110 8080
 
 VOLUME  ["/data/jetbrains_hub"]
