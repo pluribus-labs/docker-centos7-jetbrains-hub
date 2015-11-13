@@ -19,6 +19,11 @@ EXPOSE 8110 8080
 VOLUME  ["/data/jetbrains_hub"]
 ENV HUB_DATA_PATH /data/jetbrains_hub
 
+RUN mkdir -p $HUB_DATA_PATH/data
+RUN mkdir -p $HUB_DATA_PATH/backups
+RUN mkdir -p $HUB_DATA_PATH/logs
+RUN mkdir -p $HUB_DATA_PATH/temp
+
 # Looks like ENV variables don't get subbed in the CMD command hence the hardcode of values
 # from https://confluence.jetbrains.com/display/YTD6/YouTrack+JAR+as+a+Service+on+Linux
 CMD ["/opt/hub-ring-bundle-1.0.648/bin/hub.sh", "run", "--listen-port=8110"]
