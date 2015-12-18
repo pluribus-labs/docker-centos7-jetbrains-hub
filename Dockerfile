@@ -8,11 +8,11 @@ RUN yum -y install wget
 RUN yum -y install unzip
 RUN yum -y install net-tools
 
-ENV HUB_PACKAGE hub-ring-bundle-1.0.648.zip
+ENV HUB_PACKAGE hub-ring-bundle-1.0.749.zip
 ENV HUB_DOWNLOAD http://download-cf.jetbrains.com/hub/1.0
 
 RUN wget -nv $HUB_DOWNLOAD/$HUB_PACKAGE
-RUN unzip $HUB_PACKAGE -d /opt/hub-ring-bundle-1.0.648 &&\
+RUN unzip $HUB_PACKAGE -d /opt/hub-ring-bundle-1.0.749 &&\
    rm $HUB_PACKAGE
 EXPOSE 8110 8080
 
@@ -26,4 +26,4 @@ RUN mkdir -p $HUB_DATA_PATH/temp
 
 # Looks like ENV variables don't get subbed in the CMD command hence the hardcode of values
 # from https://confluence.jetbrains.com/display/YTD6/YouTrack+JAR+as+a+Service+on+Linux
-CMD ["/opt/hub-ring-bundle-1.0.648/bin/hub.sh", "run", "--listen-port=8110"]
+CMD ["/opt/hub-ring-bundle-1.0.749/bin/hub.sh", "run", "--listen-port=8110"]
