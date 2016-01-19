@@ -32,4 +32,4 @@ RUN mkdir -p $HUB_DATA_PATH/temp
 
 # Looks like ENV variables don't get subbed in the CMD command hence the hardcode of values
 # from https://confluence.jetbrains.com/display/YTD6/YouTrack+JAR+as+a+Service+on+Linux
-CMD ["/opt/hub-ring-bundle-1.0.749/bin/hub.sh", "run", "--listen-port=8110"]
+CMD ["/opt/hub/bin/hub.sh", "run", "--listen-port=8110"]
