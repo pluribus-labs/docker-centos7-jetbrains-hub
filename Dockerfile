@@ -22,6 +22,7 @@ EXPOSE 8110 8080
 
 VOLUME  ["/data/jetbrains_hub"]
 VOLUME  ["/opt/hub/conf"]
+VOLUME  ["/opt/hub/data"]
 
 ENV HUB_DATA_PATH /data/jetbrains_hub
 
