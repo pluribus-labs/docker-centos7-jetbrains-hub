@@ -8,15 +8,21 @@ RUN yum -y install wget
 RUN yum -y install unzip
 RUN yum -y install net-tools
 
-ENV HUB_PACKAGE hub-ring-bundle-1.0.749.zip
-ENV HUB_DOWNLOAD http://download-cf.jetbrains.com/hub/1.0
+ENV APP_VERSION 1.0
+ENV APP_REVISION 770
+ENV APP_BUILD $APP_VERSION.$APP_REVISION
 
-RUN wget -nv $HUB_DOWNLOAD/$HUB_PACKAGE
-RUN unzip $HUB_PACKAGE -d /opt/hub-ring-bundle-1.0.749 &&\
-   rm $HUB_PACKAGE
+ENV HUB_PACKAGE hub-ring-bundle-$APP_BUILD
+ENV HUB_DOWNLOAD https://download.jetbrains.com/hub/$APP_VERSION
+
+RUN wget -nv --output-document=hub.zip $HUB_DOWNLOAD/$HUB_PACKAGE.zip
+RUN unzip hub.zip -d /opt/hub &&\
+   rm hub.zip
 EXPOSE 8110 8080
 
 VOLUME  ["/data/jetbrains_hub"]
+VOLUME  ["/opt/hub/conf"]
+
 ENV HUB_DATA_PATH /data/jetbrains_hub
 
 RUN mkdir -p $HUB_DATA_PATH/data
