@@ -9,7 +9,7 @@ RUN yum -y install unzip
 RUN yum -y install net-tools
 
 ENV APP_VERSION 1.0
-ENV APP_REVISION 770
+ENV APP_REVISION 809
 ENV APP_BUILD $APP_VERSION.$APP_REVISION
 
 ENV HUB_PACKAGE hub-ring-bundle-$APP_BUILD
