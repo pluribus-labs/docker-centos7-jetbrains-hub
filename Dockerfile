@@ -18,6 +18,9 @@ ENV HUB_DOWNLOAD https://download.jetbrains.com/hub/$APP_VERSION
 RUN wget -nv --output-document=hub.zip $HUB_DOWNLOAD/$HUB_PACKAGE.zip
 RUN unzip hub.zip -d /opt/hub &&\
    rm hub.zip
+RUN mv /opt/hub/$HUB_PACKAGE/* /opt/hub
+RUN rm -fr /opt/hub/$HUB_PACKAGE
+
 EXPOSE 8110 8080
 
 VOLUME  ["/data/jetbrains_hub"]
